@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Will You Be My Valentine, Manisha?</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(135deg, #ff7eb9, #ff758c);
+      font-family: 'Arial', sans-serif;
+      color: white;
+      text-align: center;
+      overflow: hidden;
+    }
+    .container {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    #yesButton {
+      background: #4caf50;
+      color: white;
+    }
+    #noButton {
+      background: #f44336;
+      color: white;
+      position: absolute;
+    }
+    #message {
+      display: none;
+      margin-top: 20px;
+      font-size: 1.2rem;
+      line-height: 1.6;
+    }
+    .character {
+      margin-top: 20px;
+      font-size: 3rem;
+      animation: bounce 2s infinite;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Will You Be My Valentine, Manisha? 💖</h1>
+    <div class="buttons">
+      <button id="yesButton">YES</button>
+      <button id="noButton">NO</button>
+    </div>
+    <div id="message">
+      <p>Manisha, my Bae, you make my world brighter every single day. Your smile is my favorite sight, and your love is my greatest treasure. Will you make me the happiest person and be my Valentine? I promise to cherish you forever. 💕</p>
+      <div class="character">🥰🎉</div>
+    </div>
+  </div>
+
+  <script>
+    const noButton = document.getElementById('noButton');
+    const yesButton = document.getElementById('yesButton');
+    const message = document.getElementById('message');
+
+    noButton.addEventListener('click', () => {
+      const x = Math.random() * (window.innerWidth - noButton.offsetWidth);
+      const y = Math.random() * (window.innerHeight - noButton.offsetHeight);
+      noButton.style.left = `${x}px`;
+      noButton.style.top = `${y}px`;
+    });
+
+    yesButton.addEventListener('click', () => {
+      message.style.display = 'block';
+      noButton.style.display = 'none';
+      yesButton.style.display = 'none';
+    });
+  </script>
+</body>
+</html>
